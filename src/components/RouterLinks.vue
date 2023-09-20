@@ -1,23 +1,21 @@
 <script setup>
 import {RouterLink, RouterView} from 'vue-router'
+import GreetingTime from "@/components/GreetingTime.vue";
 </script>
 
 <template>
   <div>
-
+  <GreetingTime />
   </div>
   <div>
     <nav>
       <button id="HomeButton" >
-        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/" class="LinkStyle">Home</RouterLink>
       </button>
       <button id="SettingsButton">
-        <RouterLink to="/settings">Settings</RouterLink>
+        <RouterLink to="/settings" class="LinkStyle">Settings</RouterLink>
       </button>
     </nav>
-  </div>
-  <div>
-
   </div>
   <RouterView/>
 </template>
@@ -31,6 +29,7 @@ div {
 button#HomeButton{
   margin-right: 10px;
 }
-
-
+.LinkStyle{
+  text-decoration: none;
+}
 </style>

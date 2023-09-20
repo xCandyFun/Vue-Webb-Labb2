@@ -20,7 +20,7 @@ const filterArray = (food) =>{
     <ol>
       <li v-for="food in Food" :key="food">
         {{food}}
-        <button @click="filterArray(food)">Remove food</button>
+        <button @click="filterArray(food)">Remove</button>
       </li>
       <li id="input">
         <input type="text" v-model="inputFood"/>
