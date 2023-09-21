@@ -1,12 +1,19 @@
 <script setup>
 import {ref} from "vue";
 
+ // namn: tomat, hur många 2st, pris
 const Food = ref([]);
-
 const inputFood = ref('')
+const inputAmount = ref('')
+const inputPrice = ref('')
 
 function toAddFood(){
-  Food.value.push(inputFood.value);
+  const newShoppingItem = {
+    name:inputFood.value,
+    amount:inputAmount.value,
+    price:inputPrice.value
+  }
+  Food.value.push(newShoppingItem);
 }
 
 const filterArray = (food) =>{
@@ -19,11 +26,15 @@ const filterArray = (food) =>{
     <h2>Shopping list</h2>
     <ol>
       <li v-for="food in Food" :key="food">
-        {{food}}
+        <h1>{{food.name}}</h1>
+        <p>Amount: {{food.amount}}</p>
+        <p>Price: {{food.price}}</p>
         <button @click="filterArray(food)">Remove</button>
       </li>
       <li id="input">
-        <input type="text" v-model="inputFood"/>
+        <input type="text" v-model="inputFood" placeholder="Sak" required/>
+        <input type="text" v-model="inputAmount" placeholder="Hur många?" required/>
+        <input type="text" v-model="inputPrice" placeholder="Pris" required/>
       </li>
       <li id="input">
       </li>
