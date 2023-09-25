@@ -18,6 +18,7 @@ function ChangeFontFamily(font){
       <RouterLinks @the-change-font="ChangeFontFamily"/>
     </div>
 </template>
+
 <style scoped>
 
 </style>

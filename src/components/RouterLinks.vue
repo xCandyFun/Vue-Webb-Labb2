@@ -8,7 +8,6 @@ const emit = defineEmits(['theChangeFont'])
   function onChange(event){
   console.log(event.target.value)
   emit("theChangeFont", event.target.value)
-  //if value === 1 then
     }
 
 </script>
@@ -17,40 +16,32 @@ const emit = defineEmits(['theChangeFont'])
   <div>
   <GreetingTime />
   </div>
-  <div>
-    <nav>
-<!--      <button id="HomeButton" >-->
-<!--        <RouterLink to="/" class="LinkStyle">Home</RouterLink>-->
-<!--      </button>-->
-<!--      <button id="SettingsButton">-->
-<!--        <RouterLink to="/settings" class="LinkStyle">Settings</RouterLink>-->
-<!--      </button>-->
-    </nav>
-
-    <select @change="onChange">
-      <option value="1">Time New Roman</option>
-      <option value="2">Arial</option>
-      <option value="3">Calibri</option>
-      <option value="4">Comic Sans</option>
-    </select>
+  <div id="ChangeStyle">
+      <select @change="onChange" id="Dropdown">
+        <option value="1">Time New Roman</option>
+        <option value="2">Arial</option>
+        <option value="3">Calibri</option>
+        <option value="4">Comic Sans</option>
+      </select>
   </div>
   <RouterView/>
 </template>
 
 <style scoped>
+select#Dropdown{
+  background: #f9e2ca;;
+}
 div {
   text-align: center;
   padding-top: 10px;
 }
 
-button#HomeButton{
-  margin-right: 10px;
+div#ChangeStyle{
+  padding-right: 20px;
 }
-.LinkStyle{
-  text-decoration: none;
-}
+
 select{
   float: right;
-
+  color: #7A5D3E;
 }
 </style>

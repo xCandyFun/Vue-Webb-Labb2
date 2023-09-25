@@ -10,3 +10,9 @@
 .CS{
     font-family: "Comic Sans MS";
 }
+body{
+    background-image: url("Background.jpg");
+}
+h1{
+    color: black;
+}
